@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import { BsCartPlusFill } from "react-icons/bs";
 import Swal from 'sweetalert2'
-import {Modal, Button} from 'react-bootstrap'
 import EditProduct from '../components/forms/EditProduct'
 
 function Products({data, getProducts}){
@@ -69,14 +68,14 @@ function Products({data, getProducts}){
     // let handleShow = () => setShow(true)
 
         let showProducts = 
-        // data.length ?  <h2>No Products to Show</h2>
-        // :
+        !data.length ?  <h2>No Products to Show</h2>
+        :
          data.map(product => {
             
             return(
                 <div className="col-md-4">
                     <div className="card">
-                        <img src={`${process.env.REACT_APP_API_URL}/${product.image.split('/')[2]}`} alt="product image"/>
+                        <img src={`${process.env.REACT_APP_API_URL}/${product.image.split('/')[2]}`} alt="product"/>
                         <div className="card-body">
                             <h5 className="card-title">{product.name}</h5>
                             <p className="card-text">{product.description}</p>
