@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import Swal from 'sweetalert2'
-// import {Modal, Button} from 'react-bootstrap'
 
 function EditProduct({setEditing, product}) {
     let [cartItem, setCartItem] = useState({
@@ -12,7 +11,7 @@ function EditProduct({setEditing, product}) {
         category: product.category,
         image: product.image
     })
-    let [image, setImage] = useState({file: product.image})
+    // let [image, setImage] = useState({file: product.image})
     // let [show, setShow] = useState(false)
 
     let onChangeHandler = (e) => {
@@ -20,10 +19,10 @@ function EditProduct({setEditing, product}) {
     }
 
 
-    let imageChangeHandler = (e) => {
-        e.preventDefault()
-        setImage({file:e.target.files[0]})
-    }
+    // let imageChangeHandler = (e) => {
+    //     e.preventDefault()
+    //     setImage({file:e.target.files[0]})
+    // }
 
     let onSubmitHandler = (e, id) => {
         e.preventDefault()

@@ -4,7 +4,6 @@ import StripeCheckout from 'react-stripe-checkout'
 
 function Cart() {
     let [cartItems, setCartItems] = useState({})
-    // let [newQuantity, setNewQuantity] = useState({})
 
     let getCart = () => {
         fetch(`${process.env.REACT_APP_API_URL}/cart`, {

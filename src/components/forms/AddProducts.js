@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 
 function AddProduct({ getProducts }){
     let [product, setProduct] = useState({})
-    let [image, setImage] = useState({file:null})
+    // let [image, setImage] = useState({file:null})
 
     let onChangeHandler = (e) => {
         setProduct({...product, [e.target.name]: e.target.value})
@@ -12,7 +12,6 @@ function AddProduct({ getProducts }){
     let onSubmitHandler = (e) => {
         e.preventDefault()
         let allData = new FormData()
-        // let imageData = document.querySelector('input[type="file"]').files[0]
         let imageData = document.getElementById('img').files[0]
 
         
@@ -38,10 +37,10 @@ function AddProduct({ getProducts }){
         })
     }
 
-    let imageChangeHandler = (e) => {
-        e.preventDefault()
-        setImage({file:e.target.files[0]})
-    }
+    // let imageChangeHandler = (e) => {
+    //     e.preventDefault()
+    //     setImage({file:e.target.files[0]})
+    // }
 
     return(
         <form encType="multipart/form-data" onSubmit={onSubmitHandler}>
@@ -68,7 +67,7 @@ function AddProduct({ getProducts }){
             </div>
             <label>Add Images</label>
             <div>
-                <input type="file" name="image" id="img" className="form-control" onChange={imageChangeHandler}/>
+                <input type="file" name="image" id="img" className="form-control"/>
             </div>
             <button>Add Product</button>
         </form>
