@@ -39,6 +39,8 @@ function App() {
     setToken(data)
     setUserData(decoded)
 
+    console.log(userData)
+    console.log(token)
     localStorage.setItem('userData', JSON.stringify(decoded))
     localStorage.setItem('token', data)
   }
