@@ -87,8 +87,7 @@ function EditProduct({setEditing, product}) {
                     <label>Image</label>
                     <div>
                         <input type="file" 
-                        name="image" id="img" className="form-control" 
-                        onChange={imageChangeHandler}/>
+                        name="image" id="img" className="form-control" />
                     </div>
                     <button className="my-3">Save Changes</button>
                 </form>
