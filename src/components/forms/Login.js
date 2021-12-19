@@ -28,12 +28,13 @@ function Login( {handleLogin} ){
         })
         .then(res => res.json())
         .then(data => {
+            console.log(data)
             Swal.fire(data.msg)
             handleLogin(data.token)
             navigate("/")
         })
     }
-    
+
     return(
         <Container>
             <Row>
