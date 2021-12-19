@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import jwt_decode from 'jwt-decode'
-// import Product from './components/Product'
 import TopNav from './components/partials/Navbar'
 import Register from './components/forms/Register'
 import Login from './components/forms/Login'
@@ -35,12 +34,10 @@ function App() {
   }
 
   let handleLogin = (data) => {
-    let decoded = jwt_decode(data)
+    let decoded = jwt_decode(data, {header: true})
     setToken(data)
     setUserData(decoded)
 
-    console.log(userData)
-    console.log(token)
     localStorage.setItem('userData', JSON.stringify(decoded))
     localStorage.setItem('token', data)
   }
